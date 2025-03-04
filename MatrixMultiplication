@@ -1,0 +1,25 @@
+#Q. Write a program to find multiplication of matrix using nested loop.
+
+import numpy as np
+arr1 = np.array([[1, 2, 3], [4, 5, 6]])
+arr2 = np.array([[7, 8, 9], [10, 11, 12]])
+
+
+num_rows_arr1 = len(arr1)
+num_cols_arr1 = len(arr1[0])
+num_rows_arr2 = len(arr2)
+num_cols_arr2 = len(arr2[0])
+
+if num_cols_arr1 != num_rows_arr2:
+    print("Error: The number of columns in the first array must be equal to the number of rows in the second array.")
+else:
+    # create an empty array to store the result
+    arr3 = np.zeros((num_rows_arr1, num_cols_arr2))
+
+    # use nested loops to multiply the arrays together
+    for i in range(num_rows_arr1):
+        for j in range(num_cols_arr2):
+            for k in range(num_cols_arr1):
+                arr3[i, j] += arr1[i, k] * arr2[k, j]
+
+    print(arr3)
