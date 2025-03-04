@@ -1,0 +1,16 @@
+#Q. Create 2D array of size mXn with random number between p & q.
+# Also Display shape, size, dimension etc of above array
+import numpy as np
+m = int(input("Enter the number of rows: "))
+n = int(input("Enter the number of columns: "))
+p = int(input("Enter start of range of random nos.: "))
+q = int(input("Enter end of range of random nos.: "))
+arr = np.random.randint(p, q+1, size=(m, n))
+
+print("The 2D array is:")
+print(arr)
+
+
+print("Shape:", arr.shape)
+print("Size:", arr.size)
+print("Number of dimensions:", arr.ndim)
